@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Show</title>
+    <style>
+        #Slider {
+            width: 300px; /* Điều chỉnh kích thước phần tử Slider */
+            height: 200px;
+            overflow: hidden;
+            /* display: flex; */
+        }
+        
+        .slider_item {
+            width: 300px; /* Điều chỉnh kích thước phần tử slider_item */
+            height: 200px; /* Điều chỉnh chiều cao phần tử slider_item */
+            /* display: inline-block; */
+            transition: transform 0.3s;
+        }
+
+        #nextButton, #prevButton {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="Slider">
+        <div class="slider_item" style="background-color: #FF5733;"></div>
+        <div class="slider_item" style="background-color: #33FF57;"></div>
+        <div class="slider_item" style="background-color: #5733FF;"></div>
+        <div class="slider_item" style="background-color: #FFFF33;"></div>
+    </div>
+    <button id="prevButton">Previous</button>
+    <button id="nextButton">Next</button>
+
+    <script src="./main2.js"></script>
+</body>
+</html>

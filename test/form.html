@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<style>
+    .countdown {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+</style>
+
+<body>
+    <div class="d-flex justify-content-center">
+        <div class="countdown bg-info text-white w-75 p-2 text-center">
+            <span id="days"></span> days
+            <span id="hours"></span> hours
+            <span id="minutes"></span> minutes
+            <span id="seconds"></span> seconds
+        </div>
+    </div>
+    <section class="form w-100 d-flex justify-content-center align-items-centerflex-column">
+        <div class="w-75 shadow-lg p-5 mb-5 bg-body-tertiary rounded ">
+            <h4 class="t__blue title__CloudSoftware text-center">Learn more</h4>
+        <div class="form w-100 d-flex justify-content-between">
+            
+            <form id="userForm" class=" d-flex flex-column justify-content-center align-items-center mt-4"
+                onsubmit="validateForm(event)">
+
+                <div class="mb-3 w-100">
+                    <label for="name" class="form-label ">Name:</label>
+                    <input type="text" class="form-control" id="name" >
+                    <span class="text-danger" id="errName"></span>
+                </div>
+                <div class="mb-3 w-100">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="text" class="form-control" id="email" >
+                    <span class="text-danger" id="errMail"></span>
+                </div>
+                <div class="mb-3 w-100">
+                    <label for="age" class="form-label">Age:</label>
+                    <input type="number" class="form-control" min="10" id="age">
+                    <span class="text-danger" id="errAge"></span>
+                </div>
+
+                <div class="w-100 d-flex mb-3">
+                    <div class="form-check me-5">
+                        <input class="form-check-input" type="radio" name="sex" id="male">
+                        <label class="form-check-label" for="male">
+                            Male
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="sex" id="female" checked>
+                        <label class="form-check-label" for="female">
+                            Female
+                        </label>
+                    </div>
+                    <span class="text-danger" id="err"></span>
+                </div>
+
+               
+            </form>
+
+            <div class="img_form" style="width: 40%; min-width: 300px;">
+                <img class="w-100" src="./img/form.png" alt="">
+            </div>
+            
+
+        </div>
+        <div class="w-100 d-flex justify-content-center">
+            <button type="button" class="btn_form rounded-5" onclick="validateForm()">Send your information.</button>
+        </div>
+        </div>
+    </section>
+
+
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+
+    <script>
+        function validateForm() {
+            // event.preventDefault();
+            
+            // Lấy giá trị từ các trường input
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const phone = document.getElementById('phone');
+            const age = document.getElementById('age');
+            const female = document.getElementById('female');
+            const male = document.getElementById('male');
+            let errName = document.getElementById('errName');
+            let errMail = document.getElementById('errMail');
+            let errPhoneNumber = document.getElementById('errPhoneNumber');
+            let errAge = document.getElementById('errAge');
+
+            const regName = /\d/;
+            if (name.value.trim() == '') {
+                // alert('Vui lòng nhập tên.');
+                name.style.border = '1px solid red'; 
+                errName.innerText = 'Please enter your name!'
+                return;
+            } else if(regName.test(name.value)) {
+                name.style.border = '1px solid red'; 
+                errName.innerText = 'Name cannot contain numbers!'
+            }
+            else{
+                name.style.border = '1px solid black'; 
+                errName.innerText = '';
+            }
+
+            if (email.value.trim() === '') {
+                email.style.border = '1px solid red'; 
+                errMail.innerText = 'Please enter your email!'
+                return;
+            }else if(!isValidEmail(email)){
+                email.style.border = '1px solid red'; 
+                errMail.innerText = 'Please enter a valid email format!'
+                return;
+            }else{
+                email.style.border = '1px solid black';
+                errMail.innerText = '';
+            }
+
+            if (isNaN(age.value) || age.value < 1 || age.value > 120) {
+                age.style.border = '1px solid red'; 
+                errAge.innerText = 'Please enter your age!'
+                return;
+            }else{
+                age.style.border = '1px solid black'; 
+                errAge.innerText = '';
+            }
+
+            if (!(male.checked || female.checked)) {
+                err.innerText = 'Please enter a gender!'
+                return;
+            } else{
+                err.innerText = '';
+            }
+
+            alert("ôkee");
+
+            male.checked = false;
+            female.checked = false;
+            name.value = '';
+            email.value = '';
+            age.value = '';
+
+            // Nếu thông tin hợp lệ, bạn có thể gửi dữ liệu hoặc thực hiện hành động khác ở đây
+        }
+
+        function isValidEmail(email) {
+            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            // Kiểm tra email có hợp lệ (có thể sử dụng biểu thức chính quy hoặc các phương pháp khác)
+            return re.test(email.value);
+        }
+
+        // time count down
+        const targetDate = new Date('2023-11-19 00:00:00').getTime();
+
+        function updateCountdown() {
+            const currentDate = new Date().getTime();
+            const timeRemaining = targetDate - currentDate;
+
+            if (timeRemaining <= 0) {
+                document.getElementById("days").textContent = "0";
+                document.getElementById("hours").textContent = "0";
+                document.getElementById("minutes").textContent = "0";
+                document.getElementById("seconds").textContent = "0";
+            } else {
+                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+                document.getElementById("days").textContent = days;
+                document.getElementById("hours").textContent = hours;
+                document.getElementById("minutes").textContent = minutes;
+                document.getElementById("seconds").textContent = seconds;
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+
+        updateCountdown();
+    </script>
+</body>
+
+</html>

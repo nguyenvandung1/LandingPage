@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <!-- css -->
+  <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<style>
+  body {
+    /* background: linear-gradient(90deg, black, white); */
+
+  }
+
+  .studyingNow {
+    /* border-radius: 0 0 30% 30%; */
+  }
+
+
+  @media screen and (max-width: 992px) {
+    .title__home {
+      font-size: 5.6vw;
+    }
+
+    .introduce__bottom {
+      flex-direction: column;
+    }
+
+    .introduce__end {
+      /* margin-top: 10%; */
+      display: flex;
+      flex-direction: column !important;
+      align-items: center;
+      /* justify-content: space-around; */
+    }
+
+    .introduce__end_items_img {
+      max-width: 70%;
+      margin-top: 5%;
+    }
+
+    .introduce__bottom {
+      /* justify-content: center; */
+      align-items: center;
+    }
+
+    .img__introduce {
+      margin: 5% 0;
+      min-width: 80%;
+    }
+
+    .OurFeatures_right {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 10% 0;
+    }
+
+    .OurFeatures_right__img {
+      order: 2;
+      min-width: 80%;
+    }
+
+    .OurFeatures_right__text {
+      text-align: center;
+      text-wrap: nowrap;
+    }
+
+    .carousel {
+      width: 75%;
+      margin-top: 5%;
+    }
+
+    .about__body {
+      flex-direction: column;
+    }
+
+    .about_bt_it {
+      min-width: 80%;
+      /* flex-direction: column; */
+
+    }
+
+    br {
+      white-space: nowrap;
+    }
+
+    .about__bottom {
+      width: 100%;
+    }
+
+    .about {
+      max-width: 70%;
+    }
+
+    .OurFeatures_right {
+      width: 100% !important;
+    }
+
+    .OurFeatures_right__text {
+      width: 75% !important;
+    }
+
+
+    .OurFeatures_right__text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .introduce__top {
+      width: 80%;
+    }
+
+    .studyingNow_left {
+      margin-top: 10%;
+    }
+
+    .btn__home {
+      width: 100px;
+      height: 38px;
+    }
+
+    .text {
+      font-size: 1.5rem;
+    }
+
+    .CloudSoftware {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .items__CloudSoftware {
+      margin: 0 10px;
+    }
+
+    .studyingNow {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .studyingNow div {
+      width: 100% !important;
+    }
+
+    .studyingNow_left {
+      order: 1;
+    }
+
+    .text {
+      font-size: 16px;
+    }
+
+
+  }
+
+  @media screen and (max-width: 1200px) {
+    .introduce__end {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+
+    .about__body {
+      flex-direction: column;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .about__body .about_left {
+      width: 100% !important;
+      display: flex;
+    }
+
+    .about__body .about_left img {
+      width: 50%;
+    }
+  }
+</style>
+
+<body>
+  <header class="container-fluid position-fixed start-0 end-0 top-0 shadow-sm  mb-5 bg-body-tertiary rounded" id="home">
+    <nav class="d-flex justify-content-between align-items-center w-100 ">
+      <div id="logo" class="logo ms-5 w-25">
+        <a class="navbar-brand" href="#"><img class="img-fluid" src="./img/logo.png" alt=""></a>
+      </div>
+
+
+      <ul class="nav_container w-50 me-5" id="ul_navv">
+        <li class="nav-i">
+          <!-- onmouseenter="hvLinkON(this)" onmouseleave="hvLinkOF(this)" -->
+          <a class="nav-l" href="#home">Home</a>
+        </li>
+        <li class="nav-i">
+          <a class="nav-l" href="#">Careers</a>
+        </li>
+        <li class="nav-i ">
+          <a class="nav-l" href="#">Blog</a>
+        </li>
+        <li class="nav-i">
+          <a class="nav-l">About Us</a>
+        </li>
+      </ul>
+      <div id="openNav">
+        <i class="fa-solid fa-bars fa-xl me-5 rounded"></i>
+      </div>
+    </nav>
+  </header>
+
+  <ul class="nav_containerTc w-25 mb-5 bg-body-tertiary" id="ul_nav">
+    <li class="nav-i">
+      <!-- onmouseenter="hvLinkON(this)" onmouseleave="hvLinkOF(this)" -->
+      <a class="nav-l" href="#home">Home</a>
+    </li>
+    <li class="nav-i">
+      <a class="nav-l" href="#">Careers</a>
+    </li>
+    <li class="nav-i ">
+      <a class="nav-l" href="#">Blog</a>
+    </li>
+    <li class="nav-i">
+      <a class="nav-l">About Us</a>
+    </li>
+  </ul>
+
+
+
+  <!-- Home -->
+  <section class="d-flex studyingNow w-100 p-5 ">
+    <div class="w-50 studyingNow_left d-flex justify-content-center align-items-start flex-column">
+      <p class="title__home"><span class="t__orange">Studying</span> <span class="t__blue">Online is now much
+          easier</span></h5>
+      <p class="text">Skilline is an interesting platform that will teach you in more an interactive way</p>
+      <div class="d-flex align-items-center mt-5 ">
+        <button type="button" class="btn__home">Join for free</button>
+        <div class="d-flex align-items-center justify-content-center ms-5 ">
+          <img style="max-width: 3rem;" src="./img/icon_play.png" alt="">
+          <span class="text text-center ms-3 ">Watch how it works</span>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center w-50">
+      <img class="img-fluid" src="./img/header-pic.png" alt="">
+
+    </div>
+  </section>
+
+  <!-- Trusted -->
+  <section class="Trusted w-100 mt-5">
+    <div class="row w-100">
+      <p class="text-center t__blue">Trusted by <span id="counter" class="t__orange">0</span> Companies Worldwide</p>
+    </div>
+    <div class="trusted__icon row w-100">
+      <ul class="d-flex justify-content-center align-items-center w-100">
+        <li><img class="img-fluid" src="./img/icon_NDT/icon_gg.png" alt=""></li>
+        <li><img class="img-fluid" src="./img/icon_NDT/icon_netflix.png" alt=""></li>
+        <li><img class="img-fluid" src="./img/icon_NDT/icon_airbnb.png" alt=""></li>
+        <li><img class="img-fluid" src="./img/icon_NDT/icon_amazon.png" alt=""></li>
+        <li><img class="img-fluid" src="./img/icon_NDT/icon_fb.png" alt=""></li>
+        <li><img class="img-fluid" src="./img/icon_NDT/icon_grap.png" alt=""></li>
+      </ul>
+    </div>
+  </section>
+
+  <!--  Cloud Software -->
+  <section class="CloudSoftware container">
+    <div class="CloudSoftware__title">
+      <p class="text-center t__blue title__CloudSoftware">All-In-One <span class="t__orange">Cloud Software.</span></p>
+      <p class="text text-center">Skilline is one powerful online software suite that combines all the <br> tools needed
+        to run a successful school or office.
+      </p>
+    </div>
+    <div class="d-flex justify-content-around mt-2 pt-5 flex-wrap" id="CloudSoftware_img">
+      <div class="shadow p-3 mb-5 bg-body-tertiary rounded w-25 items__CloudSoftware">
+        <img class="img__itemsCloudSoftware w-25" src="./img/icon_CloudSoftware/icon_1.png" alt="">
+        <p class="text-center mt-5 t__blue text__itemsCloudSoftware">Online Billing, Invoicing, & Contracts</p>
+        <p class="text-center text__itemsCloudSoftware2">Simple and secure control of your organization’s financial and
+          legal transactions. Send customized invoices and contracts</p>
+      </div>
+
+      <div class="shadow p-3 mb-5 bg-body-tertiary rounded w-25 items__CloudSoftware">
+        <img class="img__itemsCloudSoftware  w-25" src="./img/icon_CloudSoftware/icon_2.png" alt="">
+        <p class="text-center mt-5 t__blue text__itemsCloudSoftware">Online Billing, Invoicing, & Contracts</p>
+        <p class="text-center text__itemsCloudSoftware2">Schedule and reserve classrooms at one campus or multiple
+          campuses. Keep detailed records of student attendance</p>
+      </div>
+
+      <div class="shadow p-3 mb-5 bg-body-tertiary rounded w-25 items__CloudSoftware">
+        <img class="img__itemsCloudSoftware w-25" src="./img/icon_CloudSoftware/icon_3.png" alt="">
+        <p class="text-center mt-5 t__blue text__itemsCloudSoftware">Online Billing, Invoicing, & Contracts</p>
+        <p class="text-center text__itemsCloudSoftware2">Automate and track emails to individuals or groups. Skilline’s
+          built-in system helps organize your organization </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- introduce -->
+  <section class="introduce">
+    <div class="introduce__top">
+      <p class="t__orange title__CloudSoftware text-center"><span class="t__blue">What is</span> Skilline?</p>
+      <p class="text-center">Skilline is a platform that allows educators to create online classes where by they can
+        <br> store the course materials online; manage assignments, quizzes and exams; monitor <br> due dates; grade
+        results and provide students with feedback all in one place.
+      </p>
+    </div>
+
+    <div class="introduce__bottom w-75 d-flex mt-5">
+      <div class="img__introduce w-50 rounded-4"
+        style=" background-image:linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('./img/introduce/img_1.png');">
+        <p class="t__introduce__bottom">FOR INSTRUCTORS</p>
+        <button type="button" class="btn btn-outline-light rounded-5">Start a class today</button>
+      </div>
+
+      <div class="img__introduce w-50 rounded-4"
+        style="background-image:linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5)), url('./img/introduce/img_2.png');">
+        <p class="t__introduce__bottom">FOR STUDENTS</p>
+        <button type="button" class="btn btn-info text-light rounded-5">Enter access code</button>
+      </div>
+    </div>
+
+    <div class="introduce__end w-75 mt-5 d-flex justify-content-around">
+      <div class="introduce__end_items">
+        <p class="text-left t__blue title__CloudSoftware">Everything you can do in a physical <br> classroom, <span
+            class="t__orange">you can do with Skilline</span></p>
+        <p class="text-left">Skilline’s school management software helps traditional <br> and online schools manage
+          scheduling, attendance, <br> payments and virtual classrooms all in one secure <br> cloud-based system.</p>
+        <a href="" class="text-dark">Learn more</a>
+      </div>
+      <div class="introduce__end_items w-50 introduce__end_items_img position-relative">
+        <img class="img-fluid rounded-5" src="./img/introduce/img_3.png" alt="">
+        <img class="position-absolute w-50 introduce__end_icon1" src="./img/introduce/icon_bg1.png" alt="">
+        <img class="position-absolute w-50 introduce__end_icon2" src="./img/introduce/icon_bg2.png" alt="">
+      </div>
+    </div>
+  </section>
+
+
+  <section class="OurFeatures d-flex justify-content-center align-items-center flex-column mb-5">
+    <div class="OurFeatures__title">
+      <p class="t__blue title__CloudSoftware text-center">Our <span class="t__orange">Features</span></p>
+      <p class="text-center">This very extraordinary feature, can make learning activities more efficient</p>
+    </div>
+
+    <div class="OurFeatures_right OurFeatures_items w-75">
+      <div class="OurFeatures_right__img">
+        <img class="container-fluid" src="./img/OurFeatures/img_1.png" alt="">
+      </div>
+      <div class="OurFeatures_right__text">
+        <p class="t__blue title__CloudSoftware text-left">A <span class="t__orange">user interface </span>designed <br>
+          for the classroom</p>
+        <div class="OurFeatures_right__textIcon">
+          <img src="./img/OurFeatures/icon_1.png" alt="">
+          <p class="text-left">Teachers don’t get lost in the grid view <br> and have a dedicated Podium space.</p>
+        </div>
+        <div class="OurFeatures_right__textIcon">
+          <img src="./img/OurFeatures/icon_2.png" alt="">
+          <p class="text-left">TA’s and presenters can be moved to <br> the front of the class.</p>
+        </div>
+        <div class="OurFeatures_right__textIcon">
+          <img src="./img/OurFeatures/icon_3.png" alt="">
+          <p class="text-left">Teachers can easily see all students <br> and class data at one time.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="OurFeatures_right OurFeatures_items">
+      <div class="OurFeatures_right__text w-50">
+        <p class="t__blue title__CloudSoftware text-left"><span class="t__orange">Tools</span> For Teachers <br> And
+          Learners <br>
+          for the classroom</p>
+        <p>
+          Class has a dynamic set of teaching tools built to <br> be deployed and used during class.
+          Teachers can <br> handout assignments in real-time for students to <br> complete and submit.
+        </p>
+      </div>
+      <div class="OurFeatures_right__img">
+        <img class="container-fluid" src="./img/OurFeatures/img_2.png" alt="">
+      </div>
+    </div>
+
+    <div class="OurFeatures_right OurFeatures_items">
+      <div class="OurFeatures_right__img">
+        <img class="container-fluid" src="./img/OurFeatures/img_3.png" alt="">
+      </div>
+      <div class="OurFeatures_right__text w-30">
+        <p class="t__blue title__CloudSoftware text-left">Assessments, <br> <span class="t__orange">Quizzes</span>,
+          Tests</p>
+        <p>Easily launch live assignments, quizzes, and <br> tests.
+          Student results are automatically entered in <br> the online gradebook.</p>
+      </div>
+    </div>
+
+    <div class="OurFeatures_right OurFeatures_items w-75">
+      <div class="OurFeatures_right__text w-50">
+        <p class="t__blue title__CloudSoftware text-left"><span class="t__orange">Class Management <br></span>Tools for
+          Educators</p>
+        <p>
+          Class provides tools to help run and manage the class <br> such as Class Roster, Attendance, and more. With
+          the <br>Gradebook, teachers can review and grade tests and <br> quizzes in real-time.
+        </p>
+      </div>
+      <div class="OurFeatures_right__img">
+        <img class="container-fluid" src="./img/OurFeatures/img_4.png" alt="">
+      </div>
+    </div>
+
+    <div class="OurFeatures_right OurFeatures_items">
+      <div class="OurFeatures_right__img">
+        <img class="container-fluid" src="./img/OurFeatures/img_5.png" alt="">
+      </div>
+      <div class="OurFeatures_right__text w-30">
+        <p class="t__blue title__CloudSoftware text-left">One-on-One <br> <span class="t__orange">Discussions</span></p>
+        <p>Teachers and teacher assistants can talk with <br> students privately without leaving the Zoom <br>
+          environment.</p>
+      </div>
+    </div>
+
+    <div class="OurFeatures_end">
+      <button type="button" class="btn btn-outline-secondary rounded-5 btn_OurFeatures">See more features</button>
+    </div>
+
+    <div class="OurFeatures_right d-flex justify-content-around w-75 mt-5 OurFeatures__tools">
+      <div class="OurFeatures_right__img ">
+        <img class="container-fluid" src="./img/OurFeatures/img_6.png" alt="">
+      </div>
+      <div class="OurFeatures_right__text w-30">
+        <p class="line">------ INTEGRATIONS</p>
+        <p class="t__blue title__CloudSoftware text-left">200+ educational tools and <br> platform <span
+            class="t__orange">integrations</span></p>
+        <p>Schoology has every tool your classroom needs and comes <br> pre-integrated with more than 200+ tools,
+          student information <br> systems (SIS), and education platforms.</p>
+        <button type="button" class="btn btn-outline-secondary rounded-5 btn_OurFeatures">See All Integrations</button>
+      </div>
+    </div>
+
+    <!-- feed back -->
+    <div class="OurFeatures_right OurFeatures_items w-75 mt-5 pt-5">
+      <div class="OurFeatures_right__text w-50">
+        <p class="line">------ TESTIMONIAL</p>
+        <p class="t__blue title__CloudSoftware text-left">What They Say?</p>
+        <p>
+          Skilline has got more than 100k positive <br> ratings from our users around the world.
+        </p>
+        <p>
+          Some of the students and teachers were <br> greatly helped by the Skilline.
+        </p>
+        <p>
+          Are you too? Please give your assessment
+        </p>
+        <button type="button" class="btn btn-outline-secondary rounded-5 btn_OurFeatures">Write your assessment <i
+            class="fa-solid boder_arrow fa-arrow-right fa-sm rounded-circle"></i></button>
+      </div>
+      <!-- <div class="OurFeatures_right__img">
+        <img class="container-fluid" src="./img/OurFeatures/img_4.png" alt="">
+      </div> -->
+      <div class="mt-5 position-relative" style="width: 400px; overflow: hidden;">
+        <div class="Slider d-flex w-100 " id="Slider">
+          <div class="slider_item position-relative">
+            <img src="./img/OurFeatures/user_1.png" class="rounded-3" alt="">
+            <div class="feedback shadow p-3 mb-5 bg-body-tertiary position-absolute w-75 rounded">
+              <p class="text-container">"Thank you so much for your help. It's exactly what I've been
+                looking for. You
+                won't regret it. It really saves me time and effort. Skilline is exactly what our
+                business has been
+                lacking."</p>
+              <div class="mt-2 d-flex justify-content-between align-items-center">
+                <p>Gloria Rose</p>
+                <div>
+                  <p class="text-center"><i class="fa-solid fa-star fa-xs" style="color: #fba333;"></i><i
+                      class="fa-solid fa-star fa-xs" style="color: #fba333;"></i><i class="fa-solid fa-star fa-xs"
+                      style="color: #fba333;"></i><i class="fa-solid fa-star fa-xs" style="color: #fba333;"></i><i
+                      class="fa-solid fa-star fa-xs" style="color: #fba333;"></i></p>
+                  <p class="text-center">12 reviews at Yelp</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slider_item position-relative">
+            <img src="./img/OurFeatures/user_2.png" alt="" class="rounded-3">
+            <div class="feedback shadow p-3 mb-5 bg-body-tertiary position-absolute w-75 rounded">
+              <p class="text-container">"Thank you so much for your help. It's exactly what I've been
+                looking for. You
+                won't regret it. It really saves me time and effort. Skilline is exactly what our
+                business has been
+                lacking."</p>
+              <div class="mt-2 d-flex justify-content-between align-items-center">
+                <p>Jonh Wick</p>
+                <div>
+                  <p class="text-center"><i class="fa-solid fa-star fa-xs" style="color: #fba333;"></i><i
+                      class="fa-solid fa-star fa-xs" style="color: #fba333;"></i><i class="fa-solid fa-star fa-xs"
+                      style="color: #fba333;"></i><i class="fa-solid fa-star fa-xs" style="color: #fba333;"></i><i
+                      class="fa-solid fa-star fa-xs" style="color: #fba333;"></i></p>
+                  <p class="text-center">12 reviews at Yelp</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slider_item position-relative">
+            <img src="./img/OurFeatures/user_3.png" alt="" class="rounded-3">
+            <div class="feedback shadow p-3 mb-5 bg-body-tertiary position-absolute w-75 rounded">
+              <p class="text-container">"Thank you so much for your help. It's exactly what I've been
+                looking for. You
+                won't regret it. It really saves me time and effort. Skilline is exactly what our
+                business has been
+                lacking."</p>
+              <div class="mt-2 d-flex justify-content-between align-items-center">
+                <p>Gloria Rose</p>
+                <div>
+                  <p class="text-center"><i class="fa-solid fa-star fa-xs" style="color: #fba333;"></i><i
+                      class="fa-solid fa-star fa-xs" style="color: #fba333;"></i><i class="fa-solid fa-star fa-xs"
+                      style="color: #fba333;"></i><i class="fa-solid fa-star fa-xs" style="color: #fba333;"></i><i
+                      class="fa-solid fa-star fa-xs" style="color: #fba333;"></i></p>
+                  <p class="text-center">12 reviews at Yelp</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <button type="button" class="slider_prev slider_icon fa-xl" id="slider_prev">
+          <i onclick="prevSlide()" class="fa-solid fa-angle-right fa-rotate-180 text-light"></i>
+        </button>
+        <button class="slider_next slider_icon text-light fa-xl" type="button" id="slider_next">
+          <i onclick="nextSlide()" class="fa-solid fa-angle-right"></i>
+        </button>
+        <div id="slide_buttons" class="slide_buttons">
+          <!-- <a href="" class="slide_btn">&bull;</a>
+            <a href="" class="slide_btn">&bull;</a>
+            <a href="" class="slide_btn">&bull;</a> -->
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- time -->
+  <div class="d-flex justify-content-center mt-5">
+    <div class="countdown bg-info text-white w-75 p-2 text-center">
+      <span id="days"></span> days
+      <span id="hours"></span> hours
+      <span id="minutes"></span> minutes
+      <span id="seconds"></span> seconds
+    </div>
+  </div>
+  <!-- form -->
+  <section class="form w-100 d-flex justify-content-center align-items-center flex-column">
+    <div class="w-75 shadow-lg p-5 mb-5 bg-body-tertiary rounded ">
+      <h4 class="t__blue title__CloudSoftware text-center">Learn more</h4>
+      <div class="form w-100 d-flex justify-content-between">
+
+        <form id="userForm" class=" d-flex flex-column justify-content-center align-items-center mt-4"
+          onsubmit="validateForm(event)">
+
+          <div class="mb-3 w-100">
+            <label for="name" class="form-label ">Name:</label>
+            <input type="text" class="form-control" id="name">
+            <span class="text-danger" id="errName"></span>
+          </div>
+          <div class="mb-3 w-100">
+            <label for="email" class="form-label">Email:</label>
+            <input type="text" class="form-control" id="email">
+            <span class="text-danger" id="errMail"></span>
+          </div>
+          <div class="mb-3 w-100">
+            <label for="age" class="form-label">Age:</label>
+            <input type="number" class="form-control" min="10" id="age">
+            <span class="text-danger" id="errAge"></span>
+          </div>
+
+          <div class="w-100 d-flex mb-3">
+            <div class="form-check me-5">
+              <input class="form-check-input" type="radio" name="sex" id="male">
+              <label class="form-check-label" for="male">
+                Male
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="sex" id="female" checked>
+              <label class="form-check-label" for="female">
+                Female
+              </label>
+            </div>
+            <span class="text-danger" id="err"></span>
+          </div>
+
+
+        </form>
+
+        <div class="img_form" style="width: 40%; min-width: 300px;">
+          <img class="w-100" src="./img/form.png" alt="">
+        </div>
+
+
+      </div>
+      <div class="w-100 d-flex justify-content-center">
+        <button type="button" class="btn_form rounded-5" onclick="validateForm()">Send your information.</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!--  -->
+  <footer class="d-flex justify-content-center align-items-center flex-column" style="background-color: #252641;">
+    <div class="d-flex justify-content-center align-items-center">
+      <img src="./img/logo_2.png" alt="" class="p-5 border-end-1">
+      <p class="text-light p-5">Virtual Class for Zoom</p>
+    </div>
+    <div class="">
+      <p class="text-light pt-3">Subscribe to get our Newsletter</p>
+
+    </div>
+    <div></div>
+  </footer>
+
+  
+
+
+
+
+
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  <!-- js -->
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
