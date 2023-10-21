@@ -141,6 +141,10 @@ header {
   flex-direction: column;
 }
 
+.introduce__end_items_img{
+  width: 40%;
+}
+
 .introduce__end_icon1 {
   position: absolute;
   top: -2%;
