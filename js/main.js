@@ -104,6 +104,8 @@ d_logo.addEventListener('mouseleave', () => {
 
 
 // slider
+// 
+// 
 let listSliders = document.getElementById('Slider').querySelectorAll('.slider_item');
 let bulletArray = [];
 let slIndex = 0;
@@ -114,130 +116,134 @@ let sliders = document.getElementById('Slider');
 // console.log(listSliders[0].offsetWidth);
 
 function addBulletClickListener(index, button) {
-  button.addEventListener('click', function () {
-    bulletArray[slIndex].classList.remove('active');
-    slIndex = index;
-    bulletArray[index].classList.add('active');
-    showSlide();
-  });
+    button.addEventListener('click', function () {
+        bulletArray[slIndex].classList.remove('active');
+        slIndex = index;
+        bulletArray[index].classList.add('active');
+        showSlide();
+    });
 }
 
 function createBullet(index) {
-  let button = document.createElement('a');
-  button.className = 'slide_btn';
-  let i = document.createElement('i');
-  i.classList.add('fa-solid');
-  i.classList.add('fa-minus');
-  button.appendChild(i);
+    let button = document.createElement('a');
+    button.className = 'slide_btn';
+    let i = document.createElement('i');
+    i.classList.add('fa-solid');
+    i.classList.add('fa-minus');
+    button.appendChild(i);
 
-  if (index === slIndex) {
-    button.classList.add('active');
-  }
+    if (index === slIndex) {
+        button.classList.add('active');
+    }
 
-  addBulletClickListener(index, button);
-  return button;
+    addBulletClickListener(index, button);
+    return button;
 }
 listSliders.forEach(function (slide, index) {
-  let slideButtons = document.getElementById('slide_buttons');
-  let bullet = createBullet(index);
-  bulletArray.push(bullet);
-  slideButtons.appendChild(bullet);
+    let slideButtons = document.getElementById('slide_buttons');
+    let bullet = createBullet(index);
+    bulletArray.push(bullet);
+    slideButtons.appendChild(bullet);
 });
-function showSlide() {
-  let sliderWidth = listSliders[0].offsetWidth;
-  // listSliders.forEach(element => {
-  //     element.style.transform = `translateX(-${sliderWidth * slIndex}px)`;
-  //     element.style.transition = 'all 0.5s linear';
-  // });
-  sliders.style.transform = `translateX(-${sliderWidth * slIndex}px)`;
 
-  // alert(`${-sliderWidth*slIndex}`);
+
+
+
+function showSlide() {
+    let sliderWidth = listSliders[0].offsetWidth;
+    sliders.style.transform = `translateX(-${sliderWidth * slIndex}px)`;
 }
 function nextSlide() {
-  bulletArray[slIndex].classList.remove('active');
-  slIndex = (slIndex + 1) % listSliders.length;
-  bulletArray[slIndex].classList.add('active');
-  // alert(slIndex)
-  showSlide();
+    bulletArray[slIndex].classList.remove('active');
+    slIndex = (slIndex + 1) % listSliders.length;
+    bulletArray[slIndex].classList.add('active');
+    // alert(slIndex)
+    showSlide();
 }
 function prevSlide() {
-  bulletArray[slIndex].classList.remove('active');
-  slIndex = (slIndex - 1 + listSliders.length) % listSliders.length;
-  bulletArray[slIndex].classList.add('active');
-  showSlide();
+    bulletArray[slIndex].classList.remove('active');
+    slIndex = (slIndex - 1 + listSliders.length) % listSliders.length;
+    bulletArray[slIndex].classList.add('active');
+    showSlide();
 }
+
+setInterval(() => {
+    nextSlide();
+}, 3000)
+
+
 
 
 // form
 function validateForm() {
 
-  const name = document.getElementById('name');
-  const email = document.getElementById('email');
-  const phone = document.getElementById('phone');
-  const age = document.getElementById('age');
-  const female = document.getElementById('female');
-  const male = document.getElementById('male');
-  let errName = document.getElementById('errName');
-  let errMail = document.getElementById('errMail');
-  let errPhoneNumber = document.getElementById('errPhoneNumber');
-  let errAge = document.getElementById('errAge');
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const phone = document.getElementById('phone');
+    const age = document.getElementById('age');
+    const female = document.getElementById('female');
+    const male = document.getElementById('male');
+    let errName = document.getElementById('errName');
+    let errMail = document.getElementById('errMail');
+    let errPhoneNumber = document.getElementById('errPhoneNumber');
+    let errAge = document.getElementById('errAge');
 
-  const regName = /\d/;
-  if (name.value.trim() == '') {
-      name.style.border = '1px solid red'; 
-      errName.innerText = 'Please enter your name!'
-      return;
-  } else if(regName.test(name.value)) {
-      name.style.border = '1px solid red'; 
-      errName.innerText = 'Name cannot contain numbers!'
-  }
-  else{
-      name.style.border = '1px solid black'; 
-      errName.innerText = '';
-  }
+    const regName = /\d/;
+    if (name.value.trim() == '') {
+        name.style.border = '1px solid red';
+        errName.innerText = 'Please enter your name!'
+        return;
+    } else if (regName.test(name.value)) {
+        name.style.border = '1px solid red';
+        errName.innerText = 'Name cannot contain numbers!'
+    }
+    else {
+        name.style.border = '1px solid black';
+        errName.innerText = '';
+    }
 
-  if (email.value.trim() === '') {
-      email.style.border = '1px solid red'; 
-      errMail.innerText = 'Please enter your email!'
-      return;
-  }else if(!isValidEmail(email)){
-      email.style.border = '1px solid red'; 
-      errMail.innerText = 'Please enter a valid email format!'
-      return;
-  }else{
-      email.style.border = '1px solid black';
-      errMail.innerText = '';
-  }
+    if (email.value.trim() === '') {
+        email.style.border = '1px solid red';
+        errMail.innerText = 'Please enter your email!'
+        return;
+    } else if (!isValidEmail(email)) {
+        email.style.border = '1px solid red';
+        errMail.innerText = 'Please enter a valid email format!'
+        return;
+    } else {
+        email.style.border = '1px solid black';
+        errMail.innerText = '';
+    }
 
-  if (isNaN(age.value) || age.value < 1 || age.value > 120) {
-      age.style.border = '1px solid red'; 
-      errAge.innerText = 'Please enter your age!'
-      return;
-  }else{
-      age.style.border = '1px solid black'; 
-      errAge.innerText = '';
-  }
+    if (isNaN(age.value) || age.value < 1 || age.value > 120) {
+        age.style.border = '1px solid red';
+        errAge.innerText = 'Please enter your age!'
+        return;
+    } else {
+        age.style.border = '1px solid black';
+        errAge.innerText = '';
+    }
 
-  if (!(male.checked || female.checked)) {
-      err.innerText = 'Please enter a gender!'
-      return;
-  } else{
-      err.innerText = '';
-  }
+    if (!(male.checked || female.checked)) {
+        err.innerText = 'Please enter a gender!'
+        return;
+    } else {
+        err.innerText = '';
+    }
 
-  alert("ôkee");
+    alert("ôkee");
 
-  male.checked = false;
-  female.checked = false;
-  name.value = '';
-  email.value = '';
-  age.value = '';
+    male.checked = false;
+    female.checked = false;
+    name.value = '';
+    email.value = '';
+    age.value = '';
 
 }
 
 function isValidEmail(email) {
-  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(email.value);
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email.value);
 }
 
 
@@ -271,3 +277,4 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 
 updateCountdown();
+
