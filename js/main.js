@@ -152,6 +152,7 @@ listSliders.forEach(function (slide, index) {
 function showSlide() {
     let sliderWidth = listSliders[0].offsetWidth;
     sliders.style.transform = `translateX(-${sliderWidth * slIndex}px)`;
+    
 }
 function nextSlide() {
     bulletArray[slIndex].classList.remove('active');
@@ -159,6 +160,7 @@ function nextSlide() {
     bulletArray[slIndex].classList.add('active');
     // alert(slIndex)
     showSlide();
+    
 }
 function prevSlide() {
     bulletArray[slIndex].classList.remove('active');
@@ -170,6 +172,11 @@ function prevSlide() {
 setInterval(() => {
     nextSlide();
 }, 3000)
+
+
+
+
+
 
 
 
