@@ -26,31 +26,29 @@
     /* background: linear-gradient(90deg, black, white); */
 
   }
-
-  
 </style>
 
 <body>
   <header class="container-fluid position-fixed start-0 end-0 top-0 shadow-sm  mb-5 bg-body-tertiary rounded" id="home">
     <nav class="d-flex justify-content-between align-items-center w-100 ">
       <div id="logo" class="logo ms-5 w-25">
-        <a class="navbar-brand" href="#"><img class="img-fluid" src="./img/logo.png" alt=""></a>
+        <a class="navbar-brand" href="#home"><img class="img-fluid" src="./img/logo.png" alt=""></a>
       </div>
 
 
-      <ul class="nav_container w-50 me-5" id="ul_navv">
+      <ul class="nav_container w-50 me-5 texts" id="ul_navv">
         <li class="nav-i">
           <!-- onmouseenter="hvLinkON(this)" onmouseleave="hvLinkOF(this)" -->
           <a class="nav-l" href="#home">Home</a>
         </li>
         <li class="nav-i">
-          <a class="nav-l" href="#">Careers</a>
+          <a class="nav-l" href="#Careers">Careers</a>
         </li>
         <li class="nav-i ">
-          <a class="nav-l" href="#">Blog</a>
+          <a class="nav-l" href="#Feedback">Feedback</a>
         </li>
         <li class="nav-i">
-          <a class="nav-l">About Us</a>
+          <a class="nav-l" href="#AboutUs">About Us</a>
         </li>
       </ul>
       <div id="openNav">
@@ -59,19 +57,19 @@
     </nav>
   </header>
 
-  <ul class="nav_containerTc w-25 mb-5 bg-body-tertiary" id="ul_nav">
+  <ul class="nav_containerTc texts w-25 mb-5 bg-body-tertiaryc" id="ul_nav">
     <li class="nav-i">
       <!-- onmouseenter="hvLinkON(this)" onmouseleave="hvLinkOF(this)" -->
       <a class="nav-l" href="#home">Home</a>
     </li>
     <li class="nav-i">
-      <a class="nav-l" href="#">Careers</a>
+      <a class="nav-l" href="#Careers">Careers</a>
     </li>
     <li class="nav-i ">
-      <a class="nav-l" href="#">Blog</a>
+      <a class="nav-l" href="#Feedback">Blog</a>
     </li>
     <li class="nav-i">
-      <a class="nav-l">About Us</a>
+      <a class="nav-l" href="#AboutUs">About Us</a>
     </li>
   </ul>
 
@@ -82,12 +80,12 @@
     <div class="w-50 studyingNow_left d-flex justify-content-center align-items-start flex-column">
       <p class="title__home"><span class="t__orange">Studying</span> <span class="t__blue">Online is now much
           easier</span></h5>
-      <p class="text">Skilline is an interesting platform that will teach you in more an interactive way</p>
+      <p class="texts">Skilline is an interesting platform that will teach you in more an interactive way</p>
       <div class="d-flex align-items-center mt-5 ">
         <button type="button" class="btn__home">Join for free</button>
         <div class="d-flex align-items-center justify-content-center ms-5 ">
           <img style="max-width: 3rem;" src="./img/icon_play.png" alt="">
-          <span class="text text-center ms-3 ">Watch how it works</span>
+          <span class="texts text-center ms-3">Watch how it works</span>
         </div>
       </div>
     </div>
@@ -100,7 +98,7 @@
   <!-- Trusted -->
   <section class="Trusted w-100 mt-5">
     <div class="row w-100">
-      <p class="text-center t__blue">Trusted by <span id="counter" class="t__orange">0</span> Companies Worldwide</p>
+      <p class="texts text-center t__blue">Trusted by <span id="counter" class="t__orange">0</span> Companies Worldwide</p>
     </div>
     <div class="trusted__icon row w-100">
       <ul class="d-flex justify-content-center align-items-center w-100">
@@ -115,10 +113,11 @@
   </section>
 
   <!--  Cloud Software -->
-  <section class="CloudSoftware container">
+  <section class="CloudSoftware container" id="Careers">
     <div class="CloudSoftware__title">
       <p class="text-center t__blue title__CloudSoftware">All-In-One <span class="t__orange">Cloud Software.</span></p>
-      <p class="text text-center">Skilline is one powerful online software suite that combines all the <br> tools needed
+      <p class="texts text-center">Skilline is one powerful online software suite that combines all the <br> tools
+        needed
         to run a successful school or office.
       </p>
     </div>
@@ -126,7 +125,7 @@
       <div class="shadow p-3 mb-5 bg-body-tertiary rounded w-25 items__CloudSoftware">
         <img class="img__itemsCloudSoftware w-25" src="./img/icon_CloudSoftware/icon_1.png" alt="">
         <p class="text-center mt-5 t__blue text__itemsCloudSoftware">Online Billing, Invoicing, & Contracts</p>
-        <p class="text-center text__itemsCloudSoftware2">Simple and secure control of your organization’s financial and
+        <p class="text-center text__itemsCloudSoftware2 ">Simple and secure control of your organization’s financial and
           legal transactions. Send customized invoices and contracts</p>
       </div>
 
@@ -152,7 +151,7 @@
   <section class="introduce">
     <div class="introduce__top">
       <p class="t__orange title__CloudSoftware text-center"><span class="t__blue">What is</span> Skilline?</p>
-      <p class="text-center">Skilline is a platform that allows educators to create online classes where by they can
+      <p class="text-center texts">Skilline is a platform that allows educators to create online classes where by they can
         <br> store the course materials online; manage assignments, quizzes and exams; monitor <br> due dates; grade
         results and provide students with feedback all in one place.
       </p>
@@ -174,9 +173,9 @@
 
     <div class="introduce__end w-75 d-flex justify-content-around">
       <div class="introduce__end_items">
-        <p class="text-left t__blue title__CloudSoftware">Everything you can do in a physical <br> classroom, <span
+        <p class="text-left t__blue title__CloudSoftware ">Everything you can do in a physical <br> classroom, <span
             class="t__orange">you can do with Skilline</span></p>
-        <p class="text-left">Skilline’s school management software helps traditional <br> and online schools manage
+        <p class="text-left texts">Skilline’s school management software helps traditional <br> and online schools manage
           scheduling, attendance, <br> payments and virtual classrooms all in one secure <br> cloud-based system.</p>
         <a href="" class="text-dark">Learn more</a>
       </div>
@@ -192,7 +191,7 @@
   <section class="OurFeatures d-flex justify-content-center align-items-center flex-column mb-5">
     <div class="OurFeatures__title">
       <p class="t__blue title__CloudSoftware text-center">Our <span class="t__orange">Features</span></p>
-      <p class="text-center">This very extraordinary feature, can make learning activities more efficient</p>
+      <p class="text-center texts">This very extraordinary feature, can make learning activities more efficient</p>
     </div>
 
     <div class="OurFeatures_right OurFeatures_items w-75">
@@ -204,15 +203,15 @@
           for the classroom</p>
         <div class="OurFeatures_right__textIcon">
           <img src="./img/OurFeatures/icon_1.png" alt="">
-          <p class="text-left">Teachers don’t get lost in the grid view <br> and have a dedicated Podium space.</p>
+          <p class="text-left texts">Teachers don’t get lost in the grid view <br> and have a dedicated Podium space.</p>
         </div>
         <div class="OurFeatures_right__textIcon">
           <img src="./img/OurFeatures/icon_2.png" alt="">
-          <p class="text-left">TA’s and presenters can be moved to <br> the front of the class.</p>
+          <p class="text-left texts">TA’s and presenters can be moved to <br> the front of the class.</p>
         </div>
         <div class="OurFeatures_right__textIcon">
           <img src="./img/OurFeatures/icon_3.png" alt="">
-          <p class="text-left">Teachers can easily see all students <br> and class data at one time.</p>
+          <p class="text-left texts">Teachers can easily see all students <br> and class data at one time.</p>
         </div>
       </div>
     </div>
@@ -222,7 +221,7 @@
         <p class="t__blue title__CloudSoftware text-left"><span class="t__orange">Tools</span> For Teachers <br> And
           Learners <br>
           for the classroom</p>
-        <p>
+        <p class="texts">
           Class has a dynamic set of teaching tools built to <br> be deployed and used during class.
           Teachers can <br> handout assignments in real-time for students to <br> complete and submit.
         </p>
@@ -239,7 +238,7 @@
       <div class="OurFeatures_right__text w-30">
         <p class="t__blue title__CloudSoftware text-left">Assessments, <br> <span class="t__orange">Quizzes</span>,
           Tests</p>
-        <p>Easily launch live assignments, quizzes, and <br> tests.
+        <p class="texts">Easily launch live assignments, quizzes, and <br> tests.
           Student results are automatically entered in <br> the online gradebook.</p>
       </div>
     </div>
@@ -248,7 +247,7 @@
       <div class="OurFeatures_right__text w-50">
         <p class="t__blue title__CloudSoftware text-left"><span class="t__orange">Class Management <br></span>Tools for
           Educators</p>
-        <p>
+        <p class="texts">
           Class provides tools to help run and manage the class <br> such as Class Roster, Attendance, and more. With
           the <br>Gradebook, teachers can review and grade tests and <br> quizzes in real-time.
         </p>
@@ -264,7 +263,7 @@
       </div>
       <div class="OurFeatures_right__text w-30">
         <p class="t__blue title__CloudSoftware text-left">One-on-One <br> <span class="t__orange">Discussions</span></p>
-        <p>Teachers and teacher assistants can talk with <br> students privately without leaving the Zoom <br>
+        <p class="texts">Teachers and teacher assistants can talk with <br> students privately without leaving the Zoom <br>
           environment.</p>
       </div>
     </div>
@@ -281,24 +280,24 @@
         <p class="line">------ INTEGRATIONS</p>
         <p class="t__blue title__CloudSoftware text-left">200+ educational tools and <br> platform <span
             class="t__orange">integrations</span></p>
-        <p>Schoology has every tool your classroom needs and comes <br> pre-integrated with more than 200+ tools,
+        <p class="texts">Schoology has every tool your classroom needs and comes <br> pre-integrated with more than 200+ tools,
           student information <br> systems (SIS), and education platforms.</p>
         <button type="button" class="btn btn-outline-secondary rounded-5 btn_OurFeatures">See All Integrations</button>
       </div>
     </div>
 
     <!-- feed back -->
-    <div class="OurFeatures_right OurFeatures_items w-75 mt-5 pt-5">
+    <div class="OurFeatures_right OurFeatures_items w-75 mt-5 pt-5" id="Feedback">
       <div class="OurFeatures_right__text w-50">
         <p class="line">------ TESTIMONIAL</p>
         <p class="t__blue title__CloudSoftware text-left">What They Say?</p>
-        <p>
+        <p class="texts">
           Skilline has got more than 100k positive <br> ratings from our users around the world.
         </p>
-        <p>
+        <p class="texts">
           Some of the students and teachers were <br> greatly helped by the Skilline.
         </p>
-        <p>
+        <p class="texts">
           Are you too? Please give your assessment
         </p>
         <button type="button" class="btn btn-outline-secondary rounded-5 btn_OurFeatures">Write your assessment <i
@@ -389,66 +388,73 @@
   </section>
 
   <!-- time -->
-  <div class="d-flex justify-content-center mt-5">
-    <div class="countdown bg-info text-white w-75 p-2 text-center">
-      <span id="days"></span> days
-      <span id="hours"></span> hours
-      <span id="minutes"></span> minutes
-      <span id="seconds"></span> seconds
-    </div>
-  </div>
+
   <!-- form -->
-  <section class="form w-100 d-flex justify-content-center align-items-center flex-column">
-    <div class="w-75 shadow-lg p-5 mb-5 bg-body-tertiary rounded ">
-      <h4 class="t__blue title__CloudSoftware text-center">Learn more</h4>
-      <div class="form w-100 d-flex justify-content-between">
-
-        <form id="userForm" class=" d-flex flex-column justify-content-center align-items-center mt-4"
-          onsubmit="validateForm(event)">
-
-          <div class="mb-3 w-100">
-            <label for="name" class="form-label ">Name:</label>
-            <input type="text" class="form-control" id="name">
-            <span class="text-danger" id="errName"></span>
-          </div>
-          <div class="mb-3 w-100">
-            <label for="email" class="form-label">Email:</label>
-            <input type="text" class="form-control" id="email">
-            <span class="text-danger" id="errMail"></span>
-          </div>
-          <div class="mb-3 w-100">
-            <label for="age" class="form-label">Age:</label>
-            <input type="number" class="form-control" min="10" id="age">
-            <span class="text-danger" id="errAge"></span>
-          </div>
-
-          <div class="w-100 d-flex mb-3">
-            <div class="form-check me-5">
-              <input class="form-check-input" type="radio" name="sex" id="male">
-              <label class="form-check-label" for="male">
-                Male
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="sex" id="female" checked>
-              <label class="form-check-label" for="female">
-                Female
-              </label>
-            </div>
-            <span class="text-danger" id="err"></span>
-          </div>
-
-
-        </form>
-
-        <div class="img_form" style="width: 40%; min-width: 300px;">
-          <img class="w-100" src="./img/form.png" alt="">
+  <section class="w-100 d-flex justify-content-center mt-5" id="AboutUs">
+    <div
+      class="w-75 d-flex justify-content-center align-items-center flex-column shadow-lg mb-5 bg-body-tertiary rounded ">
+      <div class="w-100">
+        <div class="countdown bg-info text-white w-100 p-2 text-center ">
+          <div><span>Reduce to 25%</span></div>
+          <span id="days"></span> days
+          <span id="hours"></span> hours
+          <span id="minutes"></span> minutes
+          <span id="seconds"></span> seconds
         </div>
-
-
       </div>
-      <div class="w-100 d-flex justify-content-center">
-        <button type="button" class="btn_form rounded-5" onclick="validateForm()">Send your information.</button>
+      <div class="form w-100 d-flex justify-content-center align-items-center flex-column p-5">
+        <div class="w-100">
+          <h4 class="t__blue title__CloudSoftware text-center">Learn more</h4>
+          <div class="form w-100 d-flex justify-content-between">
+
+            <form id="userForm" class=" d-flex flex-column justify-content-center align-items-center mt-4"
+              onsubmit="validateForm(event)">
+
+              <div class="mb-3 w-100">
+                <label for="name" class="form-label ">Name:</label>
+                <input type="text" class="form-control" id="name">
+                <span class="text-danger" id="errName"></span>
+              </div>
+              <div class="mb-3 w-100">
+                <label for="email" class="form-label">Email:</label>
+                <input type="text" class="form-control" id="email">
+                <span class="text-danger" id="errMail"></span>
+              </div>
+              <div class="mb-3 w-100">
+                <label for="age" class="form-label">Age:</label>
+                <input type="number" class="form-control" min="10" id="age">
+                <span class="text-danger" id="errAge"></span>
+              </div>
+
+              <div class="w-100 d-flex mb-3">
+                <div class="form-check me-5">
+                  <input class="form-check-input" type="radio" name="sex" id="male">
+                  <label class="form-check-label" for="male">
+                    Male
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="sex" id="female" checked>
+                  <label class="form-check-label" for="female">
+                    Female
+                  </label>
+                </div>
+                <span class="text-danger" id="err"></span>
+              </div>
+
+
+            </form>
+
+            <div class="img_form" style="width: 40%; min-width: 300px;">
+              <img class="w-100" src="./img/form.png" alt="">
+            </div>
+
+
+          </div>
+          <div class="w-100 d-flex justify-content-center">
+            <button type="button" class="btn_form rounded-5" onclick="validateForm()">Send your information.</button>
+          </div>
+        </div>
       </div>
     </div>
   </section>

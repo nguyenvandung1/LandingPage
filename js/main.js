@@ -257,7 +257,7 @@ function isValidEmail(email) {
 
 
 // time count down
-const targetDate = new Date('2023-11-19 00:00:00').getTime();
+const targetDate = new Date('2023-10-25 00:00:00').getTime();
 
 function updateCountdown() {
     const currentDate = new Date().getTime();
