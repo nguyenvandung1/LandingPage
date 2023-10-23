@@ -148,14 +148,14 @@ header {
 
 .introduce__end_icon1 {
   position: absolute;
-  top: -2%;
-  left: -2%;
+  top: -3%;
+  left: -3%;
   z-index: -1000;
 }
 .introduce__end_icon2 {
   position: absolute;
-  bottom: -2%;
-  right: -2%;
+  bottom: -3%;
+  right: -3%;
   z-index: -1000;
 }
 
@@ -189,7 +189,7 @@ header {
 
 .btn_OurFeatures {
   color: #f48c06;
-  border: #f48c06 1px solid;
+  border: 1px solid #f48c06 ;
 }
 
 .OurFeatures__tools {
@@ -363,7 +363,7 @@ a::after {
   width: 0;
   height: 0;
 }
-.btn__home:hover {
+/* .btn__home:hover {
   background-color: white;
   color: #feb248;
   border: 1px solid #feb248;
@@ -374,7 +374,7 @@ a::after {
   color: #feb248;
   border: 1px solid #feb248;
   box-shadow: inset 4px 4px 6px 0px #8a8a8a;
-}
+} */
 
 @keyframes spin {
   0% {
@@ -782,4 +782,248 @@ form {
   .about__body .about_left img {
     width: 50%;
   }
+}
+
+/* video player */
+
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+
+.video-controls,
+.video-timer,
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container_video {
+  width: 98%;
+  user-select: none;
+  overflow: hidden;
+  max-width: 900px;
+  background: #000;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.container.fullscreen {
+  max-width: 100%;
+  width: 100%;
+  height: 100vh;
+  border-radius: 0px;
+}
+
+.wrapper {
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  opacity: 0;
+  bottom: -15px;
+  transition: all 0.08s ease;
+}
+
+.container_video:hover .wrapper {
+  opacity: 1;
+  /* bottom: 0; */
+  transition: all 0.13s ease;
+}
+
+.wrapper::before {
+  content: "";
+  bottom: 0;
+  width: 100%;
+  z-index: 0;
+  position: absolute;
+  height: calc(100% + 35px);
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.video-timeline {
+  height: 7px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.video-timeline .progress-area {
+  height: 3px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* .progress-area span {
+    position: absolute;
+    left: 50%;
+    top: -25px;
+    font-size: 13px;
+    color: #fff;
+    pointer-events: none;
+    transform: translateX(-50%);
+} */
+
+.progress-area .progress-bar {
+  width: 0%;
+  height: 100%;
+  position: relative;
+  background: #2289ff;
+}
+
+
+
+.wrapper .video-controls {
+  padding: 5px 20px 10px;
+}
+
+.video-controls .options {
+  width: 100%;
+}
+
+.video-controls .options:first-child {
+  justify-content: flex-start;
+}
+
+.video-controls .options:last-child {
+  justify-content: flex-end;
+}
+
+.options button {
+  height: 40px;
+  width: 40px;
+  font-size: 19px;
+  border: none;
+  cursor: pointer;
+  background: none;
+  color: #efefef;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.options button :where(i, span) {
+  height: 100%;
+  width: 100%;
+  line-height: 40px;
+}
+
+.options button:hover :where(i, span) {
+  color: #fff;
+}
+
+.options button:active :where(i, span) {
+  transform: scale(0.9);
+}
+
+.options button span {
+  font-size: 23px;
+}
+
+.options input {
+  height: 4px;
+  margin-left: 3px;
+  max-width: 75px;
+  accent-color: #0078ff;
+}
+
+.options .video-timer {
+  color: #efefef;
+  margin-left: 15px;
+  font-size: 14px;
+}
+
+.video-timer .separator {
+  margin: 0 5px;
+  font-size: 16px;
+  font-family: "Open sans";
+}
+
+.playback-content {
+  display: flex;
+  position: relative;
+  z-index: 99;
+}
+
+.container video {
+  width: 100%;
+}
+
+@media screen and (max-width: 540px) {
+  .wrapper .video-controls {
+    padding: 3px 10px 7px;
+  }
+
+  .options input,
+  .progress-area span {
+    display: none !important;
+  }
+
+  .options button {
+    height: 30px;
+    width: 30px;
+    font-size: 17px;
+  }
+
+  .options .video-timer {
+    margin-left: 5px;
+  }
+
+  .video-timer .separator {
+    font-size: 14px;
+    margin: 0 2px;
+  }
+
+  .options button :where(i, span) {
+    line-height: 30px;
+  }
+
+  .options button span {
+    font-size: 21px;
+  }
+
+  .options .video-timer,
+  .progress-area span,
+  .speed-options li {
+    font-size: 12px;
+  }
+
+  .playback-content .speed-options {
+    width: 75px;
+    left: -30px;
+    bottom: 30px;
+  }
+
+  .speed-options li {
+    margin: 1px 0;
+    padding: 3px 0 3px 10px;
+  }
+
+  .right .pic-in-pic {
+    display: none;
+  }
+}
+
+.link_foodter{
+  padding: 0;
+}
+
+.link_foodter li{
+  text-align: center;
+  list-style: none;
+  margin: 0 15px;
+}
+
+footer{
+  position: relative;
+}
+
+footer::after{
+  content: "© 2021 Class Technologies Inc. ";
+  position: absolute;
+  bottom: 0;
+  /* left: 50%; */
+  color: white;
+
 }

@@ -9,6 +9,61 @@ opNav.addEventListener('click', () => {
 })
 
 
+// button home
+
+const btnHome = document.querySelector('.btn__home');
+
+btnHome.addEventListener('mouseover', function () {
+    this.style.backgroundColor = 'white';
+    this.style.color = '#feb248';
+    this.style.border = '1px solid #feb248';
+    this.style.boxShadow = '4px 4px 6px 0px #8a8a8a';
+});
+
+btnHome.addEventListener('mousedown', function () {
+    this.style.backgroundColor = 'white';
+    this.style.color = '#feb248';
+    this.style.border = '1px solid #feb248';
+    this.style.boxShadow = 'inset 4px 4px 6px 0px #8a8a8a';
+});
+btnHome.addEventListener('mouseleave', function () {
+    this.style.color = 'white'
+})
+
+
+
+let btn_introduceBT = document.querySelector('.btn_introduceBT');
+
+btn_introduceBT.addEventListener('mouseenter', () => {
+    btn_introduceBT.style.backgroundColor = 'white';
+    btn_introduceBT.style.color = 'black';
+})
+btn_introduceBT.addEventListener('mouseleave', () => {
+    btn_introduceBT.style.background = 'none';
+    btn_introduceBT.style.color = 'white';
+})
+
+
+let btn_introduceBT2 = document.querySelector('.btn_introduceBT2');
+
+btn_introduceBT2.addEventListener('mouseenter', () => {
+    btn_introduceBT2.style.backgroundColor = '#00d4ff';
+})
+btn_introduceBT2.addEventListener('mouseleave', () => {
+    btn_introduceBT2.style.background = '#0dcaf0';
+})
+
+let listBtn_OurFeatures = document.querySelectorAll('.btn_OurFeatures');
+listBtn_OurFeatures.forEach((btn) => {
+    btn.addEventListener('mouseenter', () => {
+        btn.style.color = 'white';
+        btn.style.backgroundColor = '#f48c06';
+    })
+    btn.addEventListener('mouseleave', () => {
+        btn.style.color = '#f48c06';
+        btn.style.background = 'none';
+    })
+})
 
 
 // Lấy thẻ div có id là "counter"
@@ -152,7 +207,7 @@ listSliders.forEach(function (slide, index) {
 function showSlide() {
     let sliderWidth = listSliders[0].offsetWidth;
     sliders.style.transform = `translateX(-${sliderWidth * slIndex}px)`;
-    
+
 }
 function nextSlide() {
     bulletArray[slIndex].classList.remove('active');
@@ -160,7 +215,7 @@ function nextSlide() {
     bulletArray[slIndex].classList.add('active');
     // alert(slIndex)
     showSlide();
-    
+
 }
 function prevSlide() {
     bulletArray[slIndex].classList.remove('active');
@@ -169,9 +224,18 @@ function prevSlide() {
     showSlide();
 }
 
-setInterval(() => {
+let repeatSlider = setInterval(() => {
     nextSlide();
 }, 3000)
+
+sliders.addEventListener('mouseenter', () => {
+    clearInterval(repeatSlider);
+})
+sliders.addEventListener('mouseleave', () => {
+    repeatSlider = setInterval(() => {
+        nextSlide();
+    }, 3000)
+})
 
 
 
@@ -285,3 +349,139 @@ setInterval(updateCountdown, 1000);
 
 updateCountdown();
 
+
+// 
+// 
+// 
+// video player
+
+const container = document.querySelector(".container"),
+    video = document.querySelector("#video"),
+    volumeBtn = document.querySelector(".volume i"),
+    volumeSlider = document.querySelector(".left input"),
+    skipBackward = document.querySelector(".skip-backward i"),
+    skipForward = document.querySelector(".skip-forward i"),
+    playPauseBtn = document.querySelector(".play-pause i"),
+    pipBtn = document.querySelector(".pic-in-pic span"),
+    fullScreenBtn = document.querySelector(".fullscreen i"),
+    toggleClick = document.querySelector(".toggleClick i");
+function toggleLoop() {
+
+    if (video.loop) {
+        console.log(video.loop);
+
+        toggleClick.classList.replace('fa-toggle-on', 'fa-toggle-off')
+        video.loop = false
+    } else {
+        console.log(video.loop);
+
+        toggleClick.classList.replace('fa-toggle-off', 'fa-toggle-on')
+        video.loop = true
+    }
+}
+
+toggleClick.addEventListener('click', function () {
+    toggleLoop();
+}
+)
+
+
+
+
+
+volumeBtn.addEventListener("click", () => {
+    if (!volumeBtn.classList.contains("fa-volume-high")) {
+        video.volume = 0.5;
+        volumeBtn.classList.replace("fa-volume-xmark", "fa-volume-high");
+    } else {
+        video.volume = 0.0;
+        volumeBtn.classList.replace("fa-volume-high", "fa-volume-xmark");
+    }
+    volumeSlider.value = video.volume;
+});
+
+volumeSlider.addEventListener("input", e => {
+    video.volume = e.target.value;
+    if (e.target.value == 0) {
+        return volumeBtn.classList.replace("fa-volume-high", "fa-volume-xmark");
+    }
+    volumeBtn.classList.replace("fa-volume-xmark", "fa-volume-high");
+});
+
+fullScreenBtn.addEventListener("click", () => {
+    if (video.requestFullscreen) {
+        video.requestFullscreen();
+    }
+});
+
+
+pipBtn.addEventListener("click", () => video.requestPictureInPicture());
+skipBackward.addEventListener("click", () => video.currentTime -= 5);
+skipForward.addEventListener("click", () => video.currentTime += 20);
+video.addEventListener("play", () => playPauseBtn.classList.replace("fa-play", "fa-pause"));
+video.addEventListener("pause", () => playPauseBtn.classList.replace("fa-pause", "fa-play"));
+playPauseBtn.addEventListener("click", () => video.paused ? video.play() : video.pause());
+video.addEventListener("click", () => video.paused ? video.play() : video.pause())
+
+let ipTimeline = document.getElementById('ipTimeline');
+
+ipTimeline.addEventListener('input', function () {
+    // Tính thời gian mới dựa vào giá trị thanh trượt
+
+    const currentTime = video.duration * (ipTimeline.value / 100);
+    // alert(ipTimeline.value)
+
+    // Đặt thời gian của video
+    video.currentTime = currentTime;
+});
+
+// Xử lý sự kiện khi thời gian của video thay đổi
+video.addEventListener('timeupdate', function () {
+    // Cập nhật giá trị thanh trượt để hiển thị thời gian hiện tại của video
+    // lấy time đã chạy đc chia cho 1% của tống số thời gian để lấy ra % thời gian đã chạy rồi gán cho value của input rage
+    ipTimeline.value = (video.currentTime / (video.duration / 100));
+});
+
+
+
+
+// map
+
+let map;
+
+function initMap() {
+    // Tạo một bản đồ Google Maps
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 0, lng: 0 }, // Điểm tâm ban đầu
+        zoom: 4 // Mức độ zoom ban đầu
+    });
+
+    // Khi người dùng nhấn vào nút
+    let showMapButton = document.getElementById("showMapButton");
+
+    showMapButton.addEventListener("click", function () {
+        // alert('ok');
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                // Lấy thông tin vị trí
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+
+                // Đặt bản đồ tới vị trí của bạn
+                var myLatLng = { lat: latitude, lng: longitude };
+                map.setCenter(myLatLng);
+                map.setZoom(15); // Đặt mức độ zoom
+
+                // Đánh dấu vị trí của bạn trên bản đồ
+                var marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    title: 'Vị trí của bạn'
+                });
+            });
+        } else {
+            alert("Trình duyệt không hỗ trợ Geolocation.");
+        }
+    });
+}
+initMap();
